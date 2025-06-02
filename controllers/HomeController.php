@@ -4,8 +4,8 @@ class HomeController extends Controller
 {
     public function index() {
         $model = $this->model( 'HomeModel' );
-        $message = $model->getMessage();
-        $this->view('home', [ 'message' => $message ]);
+        $messages = $model->getAllMessages();
+        $this->view('home', [ 'messages' => $messages ]);
     }
 }
 

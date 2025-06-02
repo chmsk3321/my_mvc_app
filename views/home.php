@@ -5,7 +5,13 @@
 </head>
 <body>
 
-    <h1><?= $data['message'] ?></h1>
+    <h1>메시지 목록</h1>
+
+    <ul>
+        <?php foreach ( $data['messages'] as $msg ): ?>
+            <li><?= htmlspecialchars( $msg['message'] ) ?></li>
+        <?php endforeach; ?>
+    </ul>
 
 </body>
 </html>
