@@ -9,6 +9,7 @@
 
     <h1>게시판 목록 페이지</h1>
     <a href="/board/writeView">글쓰기</a><br>
+    
     <?php
     
     // var_dump($list);
