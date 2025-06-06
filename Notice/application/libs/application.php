@@ -10,6 +10,7 @@ class Application
     public function __construct()
     {
         $getUrl = '';
+        
         if ( isset( $_GET['url'] ) ) {
             $getUrl = rtrim( $_GET['url'], '/' );
             $getUrl = filter_var( $getUrl, FILTER_SANITIZE_URL );
