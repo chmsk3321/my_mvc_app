@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>게시판 메인 페이지</title>
 </head>
 <body>
 
     <h1>게시판 목록 페이지</h1>
-    <a href="/board/writeView">글쓰기</a><br>
+    <a href="Board/writeView">글쓰기</a><br>
     
     <?php
-    
+
     // var_dump($list);
     if ( empty($list) ) {
         echo '현재 작성된 글이 없습니다.<br>';
