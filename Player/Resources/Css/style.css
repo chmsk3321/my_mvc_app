@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit';
+}
+
+@font-face {
+    font-family: 'Outfit';
+    font-stretch: normal;
+    font-style: normal;
+    font-weight: 400;
+    src: url(/static/media/Outfit-Variable.ttf) format("truetype")
+}
+
+li {
+    list-style: none;
+    padding-left: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    background-color: inherit;
+    border: none;
+    cursor: pointer;
+}
+
+main {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+aside {
+    width: 15vw;
+    height: 100%;
+    background-color: #000A3C;
+}
+
+/* logo */
+.logo {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.logo img {
+    height: 100px;
+}
+
+.list_btn {
+    display: block;
+    width: calc(100% - 40px);
+    margin: 0 20px;
+    color: #eee;
+    font-size: 14px;
+    text-transform: capitalize;
+    height: 55px;
+    border-top: 1px solid rgb(210, 210, 210);
+    border-bottom: 1px solid rgb(210, 210, 210);
+    margin-top: 40px;
+}
+
+.main {
+    width: 85vw;
+    height: 100%;
+    background-color: #F3F3F3;
+}
+
+header {
+    width: 100%;
+    height: 70px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+}
+
+/* search */
+.search {
+    display: flex;
+    background-color: #F3F3F3;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.search input {
+    outline: none;
+    border: none;
+    padding: 10px 20px;
+    background-color: inherit;
+}
+
+.search button {
+    padding: 0 25px;
+    background-color: #000A3C;
+    border-radius: 20px;
+}
+
+.search i {
+    color: #eee;
+}
+
+/* user */
+.user {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    text-transform: capitalize;
+}
+
+.user p {
+    position: relative;
+    color: rgb(180, 180, 180);
+    padding-right: 20px;
+}
+
+.user p::after {
+    position: absolute;
+    content: "";
+    top: 2.5px;
+    right: 0;
+    width: 1px;
+    height: 15px;
+    background-color: rgb(180, 180, 180);
+}
+
+.user a {
+    margin-left: 20px;
+}
+
+.contents {
+    width: 100%;
+    height: calc(100% - (70px + 90px));
+}
+
+footer {
+    width: 100%;
+    height: 90px;
+    background-color: #000D4C;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer p {
+    color: #eee;
+}
