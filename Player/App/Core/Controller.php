@@ -4,7 +4,8 @@ class Controller
 {
     public function view($move)
     {
-        require_once VIEW . "/{$move}.php";
+        // return require_once VIEW . "/{$move}.php";
+        return VIEW . "/{$move}.php";
     }
 }
 

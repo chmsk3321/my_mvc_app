@@ -21,6 +21,8 @@ class App
             unset($url[1]);
         }
 
+        $this -> params = $url ? array_values($url) : [];
+
         require_once APP . '/Controllers/' . $this -> controller . '.php';
         $class = new $this -> controller;
         $class -> $method();

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Player List</title>
-    <link rel="stylesheet" href="/my_mvc_app/Player/Resources/Css/style.css">
+    <link rel="stylesheet" href="<?= HOME ?>/Resources/Css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
@@ -31,13 +31,42 @@
                 </div>
 
                 <div class="user">
-                    <p>admin</p>
-                    <a href="<?= HOME ?>/user/login">login</a>
+                    <?php if ( isset($_SESSION['id']) ) { ?>
+                        <p>hello, <?= $_SESSION['id'] ?></p>
+                        <a href="<?= HOME ?>/user/logout">logout</a>
+                    <?php } else { ?>
+                        <p>login required</p>
+                        <a href="<?= HOME ?>/user/login">login</a>
+                    <?php } ?>
                     <a href="<?= HOME ?>/user/regist">sign up</a>
                 </div>
             </header>
 
-            <div class="contents"></div>
+            <div class="contents">
+                <div class="contents_title">
+                    <h1>player list</h1>
+                    <?php if ( isset($_SESSION['id']) && $_SESSION['id'] === 'admin' ) { ?>
+                        <button type="button" onclick="location.href='board/write'">create</button>
+                    <?php } ?>
+                </div>
+
+                <!-- 게시판 -->
+                <div class="notice_board">
+                    <div class="notice_title"><p>Roster</p></div>
+                    <?php foreach ([...$list] as $item) { ?>
+                        <div class="record">
+                            <p>
+                                <span><i>no.<?= $item['num'] ?></i></span>
+                                <span style="padding-left: 20px;"><b><?= $item['name'] ?></b></span>
+                            </p>
+                            <p>
+                                <span style="font-size: 14px;"><?= $item['nation'] ?></span>
+                                <!-- <span style="padding-left: 20px;"><img class="DgzMMrUs" width="100%" src="//i.namu.wiki/i/s53y6_-rOeTwA9Mc7y27WJqo47WKyjinKsoACKt1aRnmsNmuTP5CCXmlNkRzHfOD2dfWgn6L7QNpoHcbV3rxBNzcTAtkeodle8l9KipWxZ_ad3TtpvlVLlanV8awlGOQv0EW0QKse03mfVSdFmcMQw.svg" data-filesize="205" data-src="//i.namu.wiki/i/s53y6_-rOeTwA9Mc7y27WJqo47WKyjinKsoACKt1aRnmsNmuTP5CCXmlNkRzHfOD2dfWgn6L7QNpoHcbV3rxBNzcTAtkeodle8l9KipWxZ_ad3TtpvlVLlanV8awlGOQv0EW0QKse03mfVSdFmcMQw.svg" alt="이탈리아 국기" data-doc="/jump/fdfX9sARsprs7%2FoYorYP5wdYfyGrC%2BJDOdODEJrnKW3do4zBAvkPVwBOjg7wk2nTgzl%2FtUnQfz5TYc1qBsdFbg%3D%3D" data-v-15941d3d="" loading="lazy"></span> -->
+                            </p>
+                        </div>
+                    <?php } ?>
+                </div>
+            </div>
 
             <footer>
                 <p>Copyright &copy; My Website 2025</p>

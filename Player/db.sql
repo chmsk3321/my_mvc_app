@@ -1,0 +1,16 @@
+-- user
+CREATE TABLE user (
+    idx INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    user_id VARCHAR(50) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    reg_date DATE NOT NULL
+);
+
+CREATE TABLE list (
+    idx INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    num INT NOT NULL,
+    name VARCHAR(100) NOT NULL,
+    nation VARCHAR(100) NOT NULL,
+    gonf VARCHAR(500) NOT NULL,
+    pos VARCHAR(100) NOT NULL
+);
